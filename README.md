@@ -11,6 +11,10 @@ You will be able to:
 - Use scikit-learn to build a linear SVM when there are 2 groups
 - Use scikit-learn to build a linear SVM when there are more than 2 groups
 
+# Objectives
+* Describe the purpose of an SVM
+* Describe the transformation undergone in each kernel
+
 # Objectives (Study Group)
 YWBAT 
 * Describe what is going on in an svm (nohyper)
@@ -70,7 +74,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_8_0.png)
+![png](index_files/index_9_0.png)
 
 
 ## Use cases
@@ -84,7 +88,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_10_0.png)
+![png](index_files/index_11_0.png)
 
 
 
@@ -382,7 +386,7 @@ plt.scatter(X_1[:, 0], X_1[:, 1], c = y_1, s=25);
 ```
 
 
-![png](index_files/index_33_0.png)
+![png](index_files/index_34_0.png)
 
 
 We'll start with this data set and fit a simple linear support vector machine on these data. You can use the scikit-learn library `svm` to do so.
@@ -498,7 +502,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_50_0.png)
+![png](index_files/index_51_0.png)
 
 
 The coordinates of the support vectors can be found in the `support_vectors_`-attribute. Have a look:
@@ -531,7 +535,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_54_0.png)
+![png](index_files/index_55_0.png)
 
 
 ## When the data is not linearly separable
@@ -546,7 +550,7 @@ plt.scatter(X_2[:, 0], X_2[:, 1], c=y_2, s=25);
 ```
 
 
-![png](index_files/index_57_0.png)
+![png](index_files/index_58_0.png)
 
 
 Unlike what we've seen in the previous lab, we can just simply use the same SVC function to this problem, as this algorithm automatically allows for slack variables. Repeat the code from above here, and plot the result.
@@ -583,7 +587,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_59_0.png)
+![png](index_files/index_60_0.png)
 
 
 As you can see, 3 instances are misclassified (1 yellow, 2 purple). We probably can't do better in this situation, but it's worth to look at changing your hyperparameter C, which can be done in the .SCV command, adding a high value for the argument `C`. Set C = 5,000,000. 
@@ -620,7 +624,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_61_0.png)
+![png](index_files/index_62_0.png)
 
 
 ## Other options in Scikit Learn
@@ -658,7 +662,7 @@ plt.scatter(X[:, 0], X[:, 1], c = y, s=25);
 ```
 
 
-![png](index_files/index_65_0.png)
+![png](index_files/index_66_0.png)
 
 
 Try four different models and plot the results using subplots where:
@@ -732,7 +736,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_67_0.png)
+![png](index_files/index_68_0.png)
 
 
 Now, let's have a look at the coefficients of the decision boundaries. Remember that a simple `SVC` uses a one-vs-one method. this means that for 4 classes, $\dfrac{(4 * 3)}{2}= 6$ decision boundaries are created. The coefficients can be accessed in the attribute `.coef_`. Compare with the coefficients for the LinearSVC. What do you notice?
@@ -768,7 +772,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_71_0.png)
+![png](index_files/index_72_0.png)
 
 
 Let's look at our fourth plot. We can try and draw a line here,  but it's pretty apparent that a linear boundary is not appropriate here. In the next section you'll learn about SVMs with non-linear boundaries!
